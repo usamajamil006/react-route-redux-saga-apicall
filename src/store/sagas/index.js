@@ -3,4 +3,6 @@ function* rootSaga() {
 }
 
 export default rootSaga;
+
+// watcher saga  -> action => worker saga
  
