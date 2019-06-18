@@ -1,21 +1,13 @@
-import { take , put , call } from 'redux-saga/effects';
+import { takeEvery , put , call } from 'redux-saga/effects';
 
-function* workerSage(){
-  console.log('Hey from worker')
-  console.log(put({type:'ACTION_FROM_WORKER'}))
-  yield put({type: 'ACTION_FROM_WORKER'})
-}
-function* logoutSaga(){
-  console.log('logout from  app')
+import {WEATHER} from '../constants'
+
+function* handleWeatherLoad(){
+  console.log('loading weatherr')
 }
 
 function* rootSaga() {
-  yield take('LOGIN')
-  yield call(workerSage)
-  // yield take('ADD_TO_CART')
-  // yield take('BUY')
-  yield take('LOGOUT')
-  yield call(logoutSaga)
+  yield takeEvery(WEATHER.LOAD,handleWeatherLoad)
 }
 
 export default rootSaga;

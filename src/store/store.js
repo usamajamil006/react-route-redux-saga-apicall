@@ -13,8 +13,5 @@ const store = createStore(rootReducer, composeWithDevTools(
 
 sagaMiddleware.run(rootSaga)
 
-// store.dispatch({type:'LOGOUT'})
-store.dispatch({type:'LOGIN'})
-store.dispatch({type:'LOGOUT'})
 
 export default store;

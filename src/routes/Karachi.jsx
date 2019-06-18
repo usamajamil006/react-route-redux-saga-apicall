@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import {loadWeather} from '../store/actions/weatherAction'
+
 class Karachi extends Component {
   render() {
-    return <div>Karachi</div>;
+    const {weather} = this.props
+    return <div><a onClick={this.props.loadWeather}>Karachi</a> </div>;
   }
 }
 
@@ -12,7 +15,11 @@ const mapStateToProps = ({ weather, isloading, error }) => ({
   isloading,
   error
 });
+
+const mapDispatchToProps = dispatch =>({
+  loadWeather: () => dispatch(loadWeather())
+})
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Karachi);
