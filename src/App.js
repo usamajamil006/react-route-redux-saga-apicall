@@ -7,7 +7,8 @@ import Karachi from './routes/Karachi'
 import Lahore from './routes/Lahore'
 import Islamabad from './routes/Isalambad'
 
-function App() {
+function App(props) {
+
   return (
     <BrowserRouter>
     <div className="app">
