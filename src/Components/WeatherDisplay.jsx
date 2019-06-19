@@ -2,7 +2,6 @@ import React from "react";
 
 const WeatherDisplay = ({weather}) => (
     <div id='data'>
-    <h1 id='cityName' style={{color:"#F19E40"}}>Karachi</h1>
 
     <h2>Weather</h2>
     <h4>Headline: <strong id='headline' style={{color:"#F19E40"}}>{weather.Headline}</strong></h4>
