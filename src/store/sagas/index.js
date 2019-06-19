@@ -1,16 +1,7 @@
-import { takeEvery , put , call } from 'redux-saga/effects';
 
-import {WEATHER} from '../constants'
+import weatherSage from './weatherSage'
 
-function* handleWeatherLoad(){
-  console.log('loading weatherr')
-}
-
-function* rootSaga() {
-  yield takeEvery(WEATHER.LOAD,handleWeatherLoad)
-}
-
-export default rootSaga;
+export default weatherSage;
 
 // watcher saga  -> action => worker saga
  
