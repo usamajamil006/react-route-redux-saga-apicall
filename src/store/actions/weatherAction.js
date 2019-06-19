@@ -1,7 +1,8 @@
 import { WEATHER } from "../constants";
 
-const loadWeather = data => ({
-  type: WEATHER.LOAD
+const loadWeather = cityKey => ({
+  type: WEATHER.LOAD,
+  cityKey
 });
 
 const setWeather = data => ({
@@ -9,6 +10,10 @@ const setWeather = data => ({
   data
 });
 
+// const setCityKey = cityKey =>({
+//   type: WEATHER.LOAD_SUCCESS,
+//   cityKey
+// })
 const setError = error => ({
   type: WEATHER.LOAD_FAIL,
   error

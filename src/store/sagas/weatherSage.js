@@ -1,12 +1,14 @@
-import { takeEvery, call, put } from "redux-saga/effects";
+import { takeEvery, call, put ,select } from "redux-saga/effects";
 import { WEATHER } from "../constants";
 import { fetchWeather } from "../../api";
 import {setWeather , setError} from "../actions/weatherAction"
 
 function* handleWeatherLoad() {
   try {
-    const cityKey = 261158;
-    const weather = yield call(fetchWeather, cityKey);
+    const getCityKey = state => state.weather
+    const key = yield select( getCityKey);
+    console.log(key);
+    const weather = yield call(fetchWeather, key.cityKey);
     yield put(setWeather(weather))
   } catch (error) {
     // dispatch error
