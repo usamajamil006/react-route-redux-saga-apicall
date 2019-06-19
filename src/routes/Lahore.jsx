@@ -5,7 +5,7 @@ import { loadWeather, setWeather } from "../store/actions/weatherAction";
 import WeatherDisplay from "../components/WeatherDisplay";
 class Lahore extends Component {
   componentDidMount() {
-    this.props.loadWeather(261158);
+    this.props.loadWeather(260622);
   }
 
   render() {
